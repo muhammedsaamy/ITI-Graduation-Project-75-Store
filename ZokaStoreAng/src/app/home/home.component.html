@@ -1,0 +1,152 @@
+<section class=" homeBackground">
+  <div class="container ">
+    <div class="row d-flex justify-content-center align-items-center ">
+      <div class="col-md-12 ">
+        <img class="img-fluid" src="../../assets/background.gif" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="my-5">
+
+
+  <div id="categories" class="container ">
+    <h1 class="categoryHead my-5 py-3 m-auto  text-center w-25 ">Categories</h1>
+    <div class="row">
+      <div class="col-4 p-2 theCardCategory">
+
+        <div class="card text-bg-dark">
+          <img [src]="imgArray[0]" class="img-fluid  card-img" alt="men">
+          <div class="card-img-overlay">
+            <a routerLink="/categories/3" class="card-title btn btn-outline-light">Men's
+              Fashion</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 p-2 theCardCategory">
+
+        <div class="card text-bg-dark">
+          <img [src]="imgArray[1]" class="img-fluid  card-img" alt="women">
+          <div class="card-img-overlay ">
+            <a routerLink="/categories/4" class="card-title btn btn-outline-dark float-end">Women's
+              Fashion</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 p-2 theCardCategory">
+
+        <div class="card text-bg-dark">
+          <img [src]="imgArray[2]" class="img-fluid  card-img" alt="women">
+          <div class="card-img-overlay ">
+            <a routerLink="/categories/5" class="card-title btn btn-outline-dark float-end">Kids
+              Fashion</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 p-2 theCardCategory">
+
+        <div class="card text-bg-dark">
+          <img [src]="imgArray[3]" class="img-fluid  card-img" alt="women">
+          <div class="card-img-overlay ">
+            <a routerLink="/categories/1" class="card-title btn btn-outline-dark float-end">LapTops</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 p-2 theCardCategory">
+
+        <div class="card text-bg-dark">
+          <img [src]="imgArray[4]" class="img-fluid  card-img" alt="women">
+          <div class="card-img-overlay ">
+            <a routerLink="/categories/2" class="card-title btn btn-outline-light float-end">Mobiles</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 p-2 theCardCategory">
+
+        <div class="card text-bg-dark">
+          <img [src]="imgArray[5]" class="img-fluid  card-img" alt="women">
+          <div class="card-img-overlay ">
+            <a routerLink="/categories/6" class="card-title btn btn-outline-dark mt-5 float-start">Shoes</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</section>
+
+<section id="Brands">
+  <div class="w-75 m-auto py-5">
+
+    <h1 class="categoryHead my-5 m-auto pb-3  text-center w-25 ">Brands </h1>
+
+    <div class=" p-5 mt-3 carso">
+      <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let slide of dynamicSlides">
+          <ng-template class="m-2" carouselSlide id="{{slide.id}}">
+            <img class="img-fluid2 " [src]="slide.src" [alt]="slide.alt" [title]="slide.title">
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+
+  </div>
+</section>
+
+
+<div class="container m-auto w-100 my-4">
+  <div class="row">
+    <!-- <div class=" col-md-3 " *ngFor="let product of products">
+      <div class="m-2 card">
+        <div class="card-body">
+          <h6>Name: {{product.name}}</h6>
+          <h6>Price : {{product.price}}</h6>
+          <img class=" img-fluid m-auto my-3 " [src]="ImgSrc+product.productImages[0].url" alt="">
+          <div class="d-flex justify-content-center">
+            <a class="btn btn-primary m-2" (click)="details(product.productId)">Details</a>
+            <a class="btn btn-danger m-2" (click)="addToCart(product.productId,theCartID)">Add</a>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <h1 class="categoryHead mx-auto w-50  text-center p-4 my-5">Most Popular Products</h1>
+    <section class="py-5">
+      <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+          <div class="col mb-5" *ngFor="let item of   products">
+            <div class="card h-100">
+              <!-- Product image-->
+              <img class="card-img-top p-2" [src]="item.productImages[0].url" alt="..." />
+              <!-- Product details-->
+              <div class="card-body p-4">
+                <div class="text-center">
+                  <!-- Product name-->
+                  <h5 class="fw-bolder">{{ item.name}}</h5>
+                  <!-- Product price-->
+                  {{ item.price| currency }}
+                </div>
+              </div>
+              <!-- Product actions-->
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                    routerLink="/product/{{item.productId}}">ViewDetails</a></div>
+              </div>
+              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                    (click)="addToCart(item.productId,theCartID)">Add to cart</a></div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+
+    </section>
+  </div>
+</div>

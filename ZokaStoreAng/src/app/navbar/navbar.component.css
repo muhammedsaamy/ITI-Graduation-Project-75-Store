@@ -1,0 +1,49 @@
+.navbar-brand {
+  font-family: 'Roboto', sans-serif;
+  color: black !important;
+  font-weight: bold;
+}
+
+.navbar-brand {
+  color: #dce1e6 !important;
+  animation: pulse 4s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateX(0px);
+    /* transform: scale(1); */
+  }
+
+  25% {
+    transform: translateX(3px);
+  }
+
+  75% {
+    transform: translateX(-3px);
+  }
+
+  100% {
+    transform: translateX(0);
+    /* transform: scale(1); */
+  }
+}
+
+.img-fluid {
+  transform: scale(7);
+  height: 20px;
+  margin-left: 50px;
+}
+
+
+@media (max-width: 992px) {
+  .navbar-brand {
+    margin-bottom: 25px;
+  }
+}
+
+/* 
+
+.bg-light {
+  background-color: rgb(192, 188, 188) !important;
+} */

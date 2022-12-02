@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100&display=swap');
+
+.active1 {
+  color: #e96b56;
+  border-bottom: 1px solid #e96b56;
+  border-radius: 60%;
+
+}
+
+.carsoul {
+  border: #000 10px solid;
+}
+
+.btn-primary {
+  background-color: #09c !important;
+}
+
+.btn-primary:hover {
+  background-color: rgb(3, 106, 140) !important;
+}

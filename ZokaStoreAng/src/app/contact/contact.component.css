@@ -1,0 +1,86 @@
+/* #message {
+  background-image: url(../devfolio/overlay-bg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+} */
+
+.mess {
+  background-color: #fff;
+}
+
+
+.mess1 h1 {
+  font-size: 36px;
+  font-weight: 700;
+  position: relative;
+}
+
+.mess1 h1::after {
+  content: "";
+  width: 30%;
+  height: 3px;
+  background-color: #e96b56;
+  position: absolute;
+  top: 110%;
+  left: 0%;
+}
+
+.mess1 form textarea {
+  width: 100%;
+}
+
+.mess1 form .btn {
+  box-shadow: 0 0 8px gray;
+}
+
+.mess-inf h1 {
+  font-size: 36px;
+  font-weight: 700;
+  position: relative;
+}
+
+.mess-inf h1::after {
+  content: "";
+  width: 30%;
+  height: 3px;
+  background-color: #e96b56;
+  position: absolute;
+  top: 110%;
+  left: 0%;
+}
+
+.mess-inf p {
+  font-size: 20px;
+  color: #4e4e4e;
+  font-weight: 300;
+}
+
+.mess-inf ul {
+  list-style: none;
+  padding-left: 0%;
+}
+
+
+.mess-inf .fas {
+  color: #e96b56;
+}
+
+@media (max-width:900px) {
+  .mess-inf {
+    padding-left: 48px;
+  }
+}
+
+.mess-inf .socials .soci {
+  border: 3px #e96b56 solid;
+  padding: 12px;
+  color: black;
+  transition: all 0.5s;
+}
+
+
+.mess-inf .socials .soci:hover {
+  box-shadow: 0 0 0 4px #cde1f8;
+  background-color: #e96b56;
+  color: white;
+}

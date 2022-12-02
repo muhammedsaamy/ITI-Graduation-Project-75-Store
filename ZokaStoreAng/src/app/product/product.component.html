@@ -1,0 +1,102 @@
+<div class="container m-auto w-100 my-4">
+
+
+  <div class="input-group flex-nowrap my-5 m-auto w-50">
+    <span class="input-group-text" id="addon-wrapping"><i class="fa-brands fa-searchengin fa-2x"></i></span>
+
+    <input class="form-control" aria-describedby="addon-wrapping" type="text" name="search" [(ngModel)]="searchText"
+      autocomplete="off">
+  </div>
+
+  <h1 class="head m-auto w-50 text-center my-5 p-2"><Span>O</Span>ur Produtcs</h1>
+  <!-- <div class="row">
+    <div class=" col-md-3 " *ngFor="let product of products | filter:searchText">
+      <div class="m-2 card">
+        <div class="card-body">
+          <h6>Name: {{product.name}}</h6>
+          <h6>Price : {{product.price}}</h6>
+          <h6>Number of availability : {{product.stock}}</h6>
+          <img class=" w-75 m-auto h-50" [src]="ImgSrc+product.productImages[0].url" alt="">
+        </div>
+        <a class="btn btn-primary m-2 w-25 float-end" (click)="details(product.productId)"><i
+            class="fa-solid fa-circle-info"></i></a>
+        <a class="btn btn-danger m-2" (click)="addToCart(product.productId,theCartID)"><i
+            class="fa-solid fa-cart-plus"></i></a>
+      </div>
+    </div>
+    <p class=" mx-auto d-flex justify-content-center page px-3 mt-3 ">{{thePage}}</p>
+    <div class="   my-3 py-5 d-flex justify-content-center ">
+      <i (click)="prev() " class=" p-3 fa fa-arrow-circle-left"></i>
+
+      <i (click)="next()" class=" p-3 fa fa-arrow-circle-right"></i>
+
+    </div>
+  </div> -->
+
+
+
+  <section class="py-5">
+    <div class="container px-1 px-lg-5 mt-2">
+      <div class="row gx-1 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <div class="col mb-1" *ngFor="let item of   products | filter:searchText">
+          <div class="card   border-0  h-100  ">
+            <div class=" ictivity">
+              <div class="box">
+                <div class="ictivityImage">
+                  <img class="card-img-top img-fluid" [src]="item.productImages[0].url" alt="..." />
+
+                </div>
+                <div class="icons">
+                  <div class="card-footer p-2 pt-0 border-top-0 bg-transparent">
+                    <div class="text-center ">
+                      <a class="btn btn-primary mx-3" (click)="details(item.productId)"><i
+                          class="fa-solid fa-circle-info"></i></a>
+                      <a class="btn btn-danger " (click)="addToCart(item.productId,theCartID)"><i
+                          class="fa-solid fa-cart-plus"></i>
+                      </a>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-body p-1">
+                <div class="text-center">
+
+                  <h5 class="fw-bolder mt-3 ">{{ item.name}}</h5>
+                  <div class="d-flex justify-content-center small text-warning mb-2">
+                    <div class="bi-star-fill"></div>
+                    <div class="bi-star-fill"></div>
+                    <div class="bi-star-fill"></div>
+                    <div class="bi-star-fill"></div>
+                    <div class="bi-star-fill"></div>
+                  </div>
+                  <div class="fs-5 mb-5">
+                    <span class="text-decoration-line-through"> {{ item.price*1.2| currency }}</span>
+                    <span> {{ item.price| currency }}</span>
+                  </div>
+
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+  </section>
+
+  <p class=" mx-auto d-flex justify-content-center page px-3 mt-3 ">{{thePage}}</p>
+  <div class="   my-3 py-5 d-flex justify-content-center ">
+    <i (click)="prev() " class=" p-3 fa fa-arrow-circle-left"></i>
+
+    <i (click)="next()" class=" p-3 fa fa-arrow-circle-right"></i>
+
+  </div>
+
+</div>

@@ -1,0 +1,52 @@
+<div class="w-75 py-5 mx-auto ">
+
+  <h1 class=" w-25 mx-auto  p-3"> Login <i class="fa-solid fa-right-to-bracket"></i> </h1>
+
+  <div *ngIf="error " class="alert alert.danger m-2 ">
+    {{error}}
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="submitLoginForm(loginForm) ">
+
+    <div class="py-2">
+      <label class="py-2" for="username">user name: </label>
+      <input type="username" class="form-control" formControlName='username'>
+
+      <div *ngIf="loginForm.get('username')?.errors !=null &&
+    loginForm.get('username')?.touched" class="alert alert-danger mt-2">
+
+        <p *ngIf="loginForm.get('username')?.errors?.['required']  "> username is required </p>
+      </div>
+    </div>
+
+    <div class="py-2">
+      <label class="py-2" for="password">Password: </label>
+      <input type="password" class="form-control" formControlName='password'>
+
+      <div *ngIf="loginForm.get('password')?.errors !=null &&
+      loginForm.get('password')?.touched" class="alert alert-danger mt-2">
+
+        <p *ngIf="loginForm.get('password')?.errors?.['required']  "> Password is required </p>
+
+
+
+      </div>
+    </div>
+
+    <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary my-3 ">
+      Login </button>
+  </form>
+
+  <!-- <div class="d-flex justify-content-center align-self-end ema my-5">
+    <div class="container p-5">
+      <h1>For Test</h1>
+      <hr>
+      <h2>Email: test11@test.com</h2>
+      <h2>Password : 123456789</h2>
+    </div>
+  </div> -->
+
+
+
+
+</div>

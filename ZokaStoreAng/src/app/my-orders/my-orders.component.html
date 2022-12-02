@@ -1,0 +1,32 @@
+<div class="container">
+
+
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>order id</th>
+        <th>order time</th>
+        <th>status</th>
+        <th>items count</th>
+        <th>total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of orders" [ngClass]="
+        item.statues == 'declined'
+          ? 'text-danger'
+          : item.statues == 'accepted'
+          ? 'text-success'
+          : 'text-primary'
+      ">
+        <td>{{ item.id }}</td>
+        <td>{{ item.ended_At }}</td>
+        <td>{{ item.statues }}</td>
+        <td>{{ item.itemsCount }}</td>
+        <td>{{ item.total }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

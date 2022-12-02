@@ -1,0 +1,28 @@
+.yellow {
+
+
+
+  color: rgb(230, 230, 5) !important;
+}
+
+
+.gray {
+  color: gray;
+}
+
+.fa-brands {
+  color: gray;
+  padding: .5rem;
+  border: 1px solid gray;
+  border-radius: 50%;
+  transition: .3s all ease-in-out;
+}
+
+
+.fa-brands:hover {
+  color: white !important;
+  background-color: #09c !important;
+  opacity: 1;
+
+
+}

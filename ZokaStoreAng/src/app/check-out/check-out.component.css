@@ -1,0 +1,20 @@
+section {
+  background-image: url(../../assets/orders.jpg);
+  background-size: 100% 100%;
+}
+
+.overlay {
+  background-color: #f8f9fa;
+  border-radius: 10%;
+  overflow-x: auto;
+
+}
+
+h4 {
+  border-bottom: 2px solid black;
+  border-radius: 10%;
+}
+
+.icons {
+  color: rgba(75, 95, 147, 0.971);
+}
