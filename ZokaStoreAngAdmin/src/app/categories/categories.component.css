@@ -1,0 +1,17 @@
+.categoryHead {
+  border-bottom: 2px solid #e96b56;
+  border-radius: 60%;
+
+}
+
+a {
+  cursor: pointer;
+}
+
+.fa-pen-to-square {
+  color: rgb(116, 139, 230);
+}
+
+.fa-trash-can {
+  color: red;
+}

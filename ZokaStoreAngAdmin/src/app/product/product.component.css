@@ -1,0 +1,27 @@
+.head {
+  border-bottom: 2px solid #e96b56;
+  border-radius: 80%;
+
+
+}
+
+
+h1 span {
+  color: #e96b56;
+  font-size: 90px;
+  font-weight: 100;
+}
+
+.card-img-top {
+  height: 150px;
+  width: 150px;
+  margin: auto;
+}
+
+.fa-square-plus {
+  color: #e96b56;
+}
+
+.btn-danger {
+  background-color: #e96b56;
+}

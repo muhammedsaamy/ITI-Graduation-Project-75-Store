@@ -1,0 +1,33 @@
+<form class="form m-5" [formGroup]="editForm" (ngSubmit)="editProduct(editForm.value)">
+  <h1 class="head m-auto w-25 text-center my-5 p-2">Edit </h1>
+  <div class="form-group">
+    <label class="col-form-label" for="ProductName">Product Name :</label>
+    <input type="text" class="form-control" formControlName='Name' [value]="productName" id="ProductName">
+  </div>
+  <!-- <div class="form-group">
+    <label class="col-form-label" for="Category">Category</label>
+    <input type="text" class="form-control" formControlName='category' [value]="productCate" id="Category"
+      placeholder="Category">
+    <select class="form-select form-select-md" formControlName='category' aria-label=".form-select-sm example"
+      id="Category">
+      <option selected>{{product?.category.name}}</option>
+      <option *ngFor="let item of categories" [value]="item.name">{{item.name}}</option>
+
+    </select>
+  </div> -->
+  <div class="form-group">
+    <label class="col-form-label" for="Price">Price</label>
+    <input type="text" class="form-control" formControlName='price' [value]="productPrice" id="Price"
+      placeholder="Another input">
+  </div>
+  <div class="form-group">
+    <label class="col-form-label" for="Description">Description</label>
+    <input type="text" class="form-control" formControlName='description' [value]="productDesc" id="Description"
+      placeholder="Description">
+  </div>
+  <input [disabled]="editForm.invalid" type="submit" class="btn btn-danger mx-2  my-3 float-end" value="Edit">
+  <button routerLink="/products" class="btn btn-primary  mx-2 my-3 float-end">Back</button>
+
+
+
+</form>

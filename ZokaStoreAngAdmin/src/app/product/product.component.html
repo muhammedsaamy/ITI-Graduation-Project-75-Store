@@ -1,0 +1,117 @@
+<div class="container m-auto w-100 my-4">
+  <div class="input-group flex-nowrap my-5 m-auto w-50">
+    <span class="input-group-text" id="addon-wrapping"><i class="fa-brands fa-searchengin fa-2x"></i></span>
+
+    <input class="form-control" aria-describedby="addon-wrapping" type="text" name="search" [(ngModel)]="searchText"
+      autocomplete="off" />
+  </div>
+
+  <h1 class="head m-auto w-50 text-center my-5 p-2">
+    <Span>O</Span>ur Produtcs
+  </h1>
+
+  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+    aria-controls="offcanvasRight">
+    Create Product <i class="fa-solid fa-circle-plus"></i>
+  </button>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 id="offcanvasRightLabel">
+        Create Product <i class="fa-solid fa-square-plus px-3"></i>
+      </h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <form class="form m-5" [formGroup]="createForm" (ngSubmit)="AddProduct(createForm)">
+        <div class="form-group">
+          <label class="col-form-label" for="name">Product Name :</label>
+          <input type="text" class="form-control" formControlName="name" id="ProductName" />
+        </div>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label class="col-form-label" for="Price">Price</label>
+            <input type="text" class="form-control" formControlName="price" id="Price" placeholder="Another input" />
+          </div>
+          <div class="form-group col-md-6">
+            <label class="col-form-label" for="weight">weight</label>
+            <input type="text" class="form-control" formControlName="weight" id="weight" placeholder="Another input" />
+          </div>
+          <div class="form-group col-md-6">
+            <label class="col-form-label" for="size">size</label>
+            <input type="text" class="form-control" formControlName="size" id="size" placeholder="Another input" />
+          </div>
+          <!-- <div class="form-group col-md-6">
+            <label class="col-form-label" for="brandId">brandId</label>
+            <input type="text" class="form-control" formControlName="brandId" id="brandId"
+              placeholder="Another input" />
+          </div> -->
+        </div>
+        <div class="form-group">
+          <label class="col-form-label" for="Category">Category</label>
+          <!-- <input type="text" class="form-control" formControlName='category'  id="Category"
+            placeholder="Category"> -->
+          <select class="form-select form-select-md" formControlName="categoryId" aria-label=".form-select-sm example"
+            id="Category">
+            <option *ngFor="let item of selectCategories" [value]="item.id">
+              {{ item.name }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="col-form-label" for="Description">Description</label>
+          <input type="text" class="form-control" formControlName="description" id="Description"
+            placeholder="Description" />
+        </div>
+        <div class="form-group">
+          <label class="col-form-label" for="discount">discount</label>
+          <input type="text" class="form-control" formControlName="discount" id="discount" placeholder="discount" />
+        </div>
+        <div class="form-group">
+          <label class="col-form-label" for="stock">stock</label>
+          <input type="text" class="form-control" formControlName="stock" id="stock" placeholder="stock" />
+        </div>
+        <div class="image my-2 col-md-6">
+          <label for="image">Images<span class="text-danger ms-2">*</span></label>
+          <input id="image" #myInputFile multiple="" formControlName="productImages" type="file" class="form-control"
+            (change)="uploadPhoto($event.target)" />
+        </div>
+        <!-- <div class="input-group my-3">
+          <input type="file" class="form-control" formControlName='url' id="inputGroupFile01">
+        </div> -->
+
+        <input [disabled]="createForm.invalid" type="submit" class="btn btn-danger mx-2 my-3 float-end"
+          value="Create" />
+      </form>
+    </div>
+  </div>
+
+  <section class="py-5">
+    <div class="container px-1 px-lg-5 mt-2">
+      <div class="row justify-content-center">
+        <div class="col-md-3 mb-1" *ngFor="let item of products | filter: searchText">
+          <div class="card text-center">
+            <img [src]="item.productImages[0]?.url" class="card-img-top" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">{{ item.name }}</h5>
+              <a class="btn btn-primary m-1" (click)="details(item.productId)">Details</a>
+              <a class="btn btn-success m-1" (click)="editProduct(item.productId)">edit</a>
+              <a class="btn btn-danger" (click)="deleteproduct(item.productId)"><i
+                  class="fa-solid fa-trash-can"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <p class="mx-auto d-flex justify-content-center page px-3 mt-3">
+    {{ thePage }}
+  </p>
+  <div class="my-3 py-5 d-flex justify-content-center">
+    <i (click)="prev()" class="p-3 fa fa-arrow-circle-left"></i>
+
+    <i (click)="next()" class="p-3 fa fa-arrow-circle-right"></i>
+  </div>
+</div>

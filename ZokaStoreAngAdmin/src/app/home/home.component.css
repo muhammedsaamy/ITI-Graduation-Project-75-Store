@@ -1,0 +1,49 @@
+.headCap {
+  color: red;
+  font-style: italic;
+  font-family: 'Overpass', sans-serif;
+  font-weight: 900;
+
+}
+
+.img-fluid1 {
+  transform: scale(1.1);
+  width: 160px;
+  height: 180px;
+  transition: all 1s;
+}
+
+#Brands {
+  background-color: #f8f9fa;
+}
+
+/* .carso {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+} */
+
+.img-fluid2 {
+  height: 180px;
+  padding: 10px;
+}
+
+.categoryHead {
+  border-bottom: 2px solid #e96b56;
+  border-radius: 60%;
+
+}
+
+.theCardCategory:hover .img-fluid1 {
+
+  transform: scale(1);
+}
+
+.fa {
+  color: #e96b56 !important;
+}
+
+a {
+  text-decoration: none;
+  color: #e96b56 !important;
+  cursor: pointer;
+}

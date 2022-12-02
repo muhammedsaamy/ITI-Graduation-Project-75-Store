@@ -1,0 +1,18 @@
+<form class="form m-5" [formGroup]="editForm" (ngSubmit)="editCategory(editForm.value)">
+  <h1 class="head m-auto w-25 text-center my-5 p-2">Edit Category</h1>
+  <!-- <div class="form-group">
+    <label class="col-form-label" for="CategoryName">Category ID :</label>
+    <input type="text" class="form-control dis" aria-disabled="true" formControlName='id' [value]="categoryID"
+      id="categoryID">
+  </div> -->
+  <div class="form-group">
+    <label class="col-form-label" for="CategoryName">Category Name :</label>
+    <input type="text" class="form-control" formControlName='name' [value]="category?.name" id="CategoryName">
+  </div>
+
+  <input [disabled]="editForm.invalid" type="submit" class="btn btn-danger mx-2  my-3 float-end" value="Edit">
+  <button routerLink="/categories" class="btn btn-primary  mx-2 my-3 float-end">Back</button>
+
+
+
+</form>

@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+    <h1 class="head w-25 py-4 text-center m-auto">Pending Carts</h1>
+
+    <table class="w-100 text-center table my-5">
+      <thead>
+        <tr class="py-4">
+          <th>User Name</th>
+          <th>total</th>
+          <th>status</th>
+          <th>created at</th>
+          <th>items count</th>
+          <th>Accept</th>
+          <th>Refuse</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let item of cartSessions"
+          [ngClass]="
+            item.statues == 'declined'
+              ? 'text-danger'
+              : item.statues == 'accepted'
+              ? 'text-success'
+              : 'text-primary'
+          "
+        >
+          <td>
+            {{ item.user.userName }}
+          </td>
+          <td>
+            {{ item.total }}
+          </td>
+          <td>
+            {{ item.statues }}
+          </td>
+          <td>
+            {{ item.created_At }}
+          </td>
+          <td>
+            {{ item.itemsCount }}
+          </td>
+          <td>
+            <a (click)="accept(item.id, item, 'y')"
+              ><i class="fa-solid fa-check"></i
+            ></a>
+          </td>
+          <td>
+            <a (click)="accept(item.id, item, 'x')"
+              ><i class="fa-solid fa-xmark"></i
+            ></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
